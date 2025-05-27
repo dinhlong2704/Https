@@ -2,28 +2,30 @@ package com.example.http.ui.theme;
 
 import android.os.Bundle;
 
+import com.example.http.databinding.MainActivityBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.http.databinding.ActivityMainBinding;
 import com.example.http.R;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private ActivityMainBinding binding;
+    private MainActivityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = MainActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        initView();
 
-        binding.fab.setOnClickListener(view -> Snackbar.make(view, "Hello World", Snackbar.LENGTH_LONG)
-                .setAnchorView(R.id.fab)
-                .setAction("Action", null).show());
+    }
+
+    private void initView() {
+
     }
 }
